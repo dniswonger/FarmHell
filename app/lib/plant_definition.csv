@@ -1,0 +1,206 @@
+Id,Genus,Species,Variety,PlantCategory,IsEdible,Form,MaxHeight,MinHeight,Habit,MinZone,MaxZone,ColorPredominant,ColorMajor,ColorMinor,LightPreferenceMin,LightPreferenceMax,WaterPreference,TimeAdded,TimeAltered
+3,Heliconia,Rostrata,Peru,Heliconia,False,4,10,6,1,,,1,3,4,2,4,3,2023-01-01 00:00:00.0000000,2023-06-01 00:19:21.7131316
+4,Heliconia,Bihai,Orange Claw,Heliconia,False,4,20,5,,,,2,2,2,,,,2023-01-01 00:00:00.0000000,2023-01-01 00:00:00.0000000
+5,Musa,Coccinea,Scarlet Banana,Banana,False,4,6,,,,,1,1,1,,,,2023-01-01 00:00:00.0000000,2023-07-05 17:05:09.8008464
+6,Heliconia,Regalis,Barnum & Bailey,Heliconia,False,4,20,5,,,,1,2,3,,,,2023-04-28 21:28:45.6623925,2023-05-10 00:07:37.5774194
+7,Heliconia,Caribaea,Unknown,Heliconia,False,4,,,,,,,,,,,,2023-04-28 21:29:34.5547030,2023-07-27 01:56:14.8300134
+10,Etlingera,Elatior,Red Torch,Ginger,False,4,,,,,,1,,,,,,2023-04-28 21:30:50.9863996,2023-05-10 00:08:04.5200133
+12,Alpinia,Malaccensis,Giant Pink Shell,Ginger,False,4,12,8,1,,,9,,,3,4,3,2023-04-28 21:32:16.2577497,2024-06-12 05:54:40.7311880
+13,Wodyetia,Bifurcata,Foxtail Palm,Palm,False,4,,,,,,,,,,,,2023-04-28 21:36:04.7514323,2023-05-10 00:08:21.9893331
+14,Syagrus,Romanzoffiana,Queen Palm,Palm,False,1,,,,,,,,,,,,2023-04-28 21:36:55.0596141,2023-05-10 00:08:31.0562414
+15,Musa,Ornata,Royal Purple,Banana,False,4,9,5,1,,,6,9,7,3,4,3,2023-01-01 00:00:00.0000000,2023-07-03 23:10:29.4379916
+16,Aplinia,Purpurata,Red Ginger,Ginger,False,4,6,2,1,,,1,,,,,3,2023-04-30 23:35:21.7106119,2023-07-03 23:15:59.4564424
+17,Heliconia,Caribaea x Bihai,Jacquinii,Heliconia,False,4,14,,,,,,,,,,,2023-05-01 00:27:26.1999453,2023-05-10 00:18:55.1452031
+18,Heliconia,Marginata,Lutea,Heliconia,False,4,10,,,,,,,,,,,2023-05-01 00:28:28.2447859,2023-05-10 00:19:04.8076131
+22,Heliconia,Xanthivillosa,Shogun,Heliconia,False,4,,,,,,,,,,,,2023-05-01 00:45:03.8986652,2023-05-10 00:19:31.0859693
+30,Heliconia,Caribaea,Orange Delight,Heliconia,False,4,,,,,,,,,,,,2023-05-10 00:36:30.2974933,2023-05-10 00:36:30.2974936
+31,Alocasia,Borneo X Odora,Borneo King,Foliage,False,4,8,5,1,,,4,,,1,3,3,2023-05-23 03:32:11.3190314,2023-07-06 03:53:08.2760467
+32,Adonidia,Merrillii,Manilla Palm,Palm,False,4,30,20,0,,,,,,3,4,3,2023-05-23 03:46:00.0211590,2023-05-23 03:46:00.0211596
+33,Heliconia,Orthotricha,Maleko Red,Heliconia,False,4,10,8,1,,,1,8,,3,4,3,2023-05-23 03:52:24.8340792,2023-05-23 03:52:24.8340794
+34,Heliconia,Caribaea x Bihai,Bubble Gum,Heliconia,False,4,18,10,1,,,2,9,,3,4,3,2023-05-23 03:57:37.6357496,2023-05-23 04:20:41.1735371
+36,Heliconia,Caribaea x Bihai,Prince of Darkness,Heliconia,False,4,18,10,1,,,1,,,3,4,3,2023-05-23 04:19:41.1516024,2023-07-23 18:02:49.5916826
+37,Ptychosperma,Macarthurii,Macarthur Palm,Palm,False,4,22,15,1,,,,,,3,4,3,2023-05-23 04:32:23.5662833,2023-05-23 04:32:23.5662837
+38,Heliconia,Psittacorum x Spathocircinata ,Golden Torch,Heliconia,False,4,7,4,1,,,3,,,2,4,3,2023-05-23 04:39:32.1876443,2023-05-23 04:39:32.1876446
+39,Heliconia,Psittacorum hybrid,Tropic,Heliconia,False,4,7,4,2,,,2,3,9,3,4,3,2023-05-23 04:46:29.8789337,2023-05-23 04:46:29.8789339
+40,Etlingera,Elatior,White Torch,Ginger,False,4,16,10,1,,,7,,,3,4,3,2023-05-27 06:14:05.6571440,2023-05-27 06:14:05.6571443
+41,Zingiber,Unknown Hybrid,Unnamed Hybrid (PGH),Ginger,False,4,10,8,1,,,,,,3,4,3,2023-05-27 06:16:33.6321325,2023-07-05 02:51:53.1974391
+42,Zingiber,Spectabile,Glowing Orb,Ginger,False,4,8,6,1,,,2,,,3,4,3,2023-05-27 06:20:42.0570350,2023-05-27 06:20:42.0570352
+43,Heliconia,Farinosa,Rio,Heliconia,False,4,8,5,1,,,1,3,,3,4,3,2023-05-27 06:23:48.4301683,2023-05-27 06:42:50.8853107
+44,Zingiber,Macrodenium,Chocolate Ball,Ginger,False,4,8,6,1,,,2,,,4,4,3,2023-05-27 06:29:04.7959212,2024-02-17 07:36:51.4336226
+45,Heliconia,Rostrata,Ten Day,Heliconia,False,4,20,6,1,,,1,3,4,2,4,3,2023-05-27 06:34:22.0297127,2023-05-27 06:34:22.0297131
+46,Alpinia,Zerumbet,Mega Shell,Ginger,False,4,7,5,1,,,9,3,,4,4,3,2023-05-27 06:39:14.1382552,2024-06-12 05:54:58.0824239
+48,Burbidgea,Schizocheila,Gold Brush,Ginger,False,4,2,1,1,,,2,3,,3,4,3,2023-05-28 04:37:30.4386882,2023-05-28 04:37:30.4386887
+49,Schaueria,Flavicoma,Golden Plume,Shrub,False,4,4,2,1,,,3,,,3,3,3,2023-05-30 23:27:10.2778599,2023-05-30 23:29:56.4594096
+50,Heliconia,Carmalae,Carma,Heliconia,False,4,18,10,1,,,1,2,3,3,4,3,2023-05-31 00:13:27.8523139,2023-05-31 00:13:27.8523142
+51,Alpinia,Galanga,Galangal,Ginger,False,4,8,6,1,,,7,,,3,4,3,2023-05-31 00:29:22.5125832,2023-05-31 00:32:01.3783208
+52,Heliconia,Lawrencia,Lawrencia,Heliconia,False,4,16,10,1,,,1,2,,3,2,3,2023-06-01 00:03:48.8908688,2023-06-01 16:57:28.6832770
+53,Heliconia,Pendula x Bihai ,Hot Rio Nites,Heliconia,False,4,18,12,1,,,1,,,3,4,3,2023-06-01 00:04:47.0480973,2023-06-01 16:54:52.8125775
+54,Heliconia,Lingulata ,Fan,Heliconia,False,4,15,5,1,,,3,,,2,4,3,2023-06-01 00:06:35.6538844,2023-12-18 01:24:31.4313100
+55,Calathea,Crotilifera ,Giant Rattlesnake,Calathea,False,4,8,6,1,,,3,,,3,4,3,2023-06-01 00:07:15.8813656,2023-06-01 17:09:40.3536490
+56,Heliconia,Aurea,Chalko,Heliconia,False,4,18,10,1,,,1,3,4,3,4,3,2023-06-01 00:12:42.8243772,2023-06-01 17:11:42.4454513
+57,Heliconia,Psittacorum x Marginata,Nickereinsis,Heliconia,False,4,10,4,2,,,2,3,,2,4,4,2023-06-01 00:13:34.3200566,2023-06-01 17:14:57.2740892
+58,Etlingera,Elatior,Shocking Pink,Ginger,False,4,16,10,1,,,9,,,3,4,3,2023-06-01 00:15:10.9622364,2023-06-01 17:18:36.4347020
+59,Heliconia,Vellerigera,She Kong,Heliconia,False,4,14,8,1,,,2,,,3,3,3,2023-06-01 00:15:37.7377602,2023-06-01 17:26:28.1528745
+60,Heliconia,Champneiana,Maya Sunrise,Heliconia,False,4,,,1,,,2,1,,,,3,2023-06-01 00:16:18.3967469,2023-07-27 01:48:49.8648519
+61,Heliconia,Bihai x Caribaea,Criswick,Heliconia,False,4,,,,,,,,,,,,2023-06-01 00:17:05.6648425,2023-07-27 01:52:29.5305357
+62,Heliconia,Bihai,Arawak,Heliconia,False,4,,,,,,,,,,,,2023-06-01 00:17:37.1551398,2023-07-27 01:50:53.7774249
+64,Heliconia,Latispatha x Bihai,Fat Lat,Heliconia,False,4,16,10,1,,,1,2,,3,4,3,2023-06-06 20:01:28.7542327,2023-06-06 20:01:28.7542331
+65,Heliconia,Orthotricha,Tricolor,Heliconia,False,4,10,4,1,,,1,3,4,3,4,3,2023-06-06 22:44:06.4330428,2023-06-06 22:44:06.4330431
+66,Heliconia,Vellerigera,Red Carpet,Heliconia,False,4,16,10,1,,,1,2,,3,4,3,2023-07-03 22:53:06.0547375,2023-07-03 22:53:06.0547377
+67,Heliconia,Roastrata x Standleyii,La Wille,Heliconia,False,4,15,10,1,,,1,3,4,3,3,3,2023-07-03 23:04:58.7421087,2023-07-03 23:16:43.7229653
+68,Alpinia,Vitatta,Variegated Shell,Ginger,False,4,6,2,1,,,9,7,,3,2,3,2023-07-05 01:14:04.9944872,2023-07-05 01:14:04.9944875
+69,Heliconia,Stricta,Iris,Heliconia,False,4,10,5,1,,,1,,,3,4,3,2023-07-05 01:48:54.7381164,2023-07-05 01:48:54.7381167
+70,Alocasia,Boa,A. Hay,Foliage,False,4,4,3,1,,,,,,2,3,3,2023-07-05 01:56:17.5675335,2023-07-06 03:53:55.6896979
+71,Alocasia,Macrorrhiza,Lutea,Shrub,False,4,10,6,1,,,,,,1,2,3,2023-07-05 02:02:21.9110471,2023-07-05 02:02:21.9110472
+72,Dypsis,Lutescens,Areca,Palm,False,4,40,20,1,,,,,,3,4,3,2023-07-05 02:06:05.9175839,2023-07-05 02:06:05.9175840
+73,Heliconia,Platystachys,Sexy Orange,Heliconia,False,4,18,12,1,,,2,3,,2,4,3,2023-07-05 02:13:56.4580915,2023-07-05 02:13:56.4580916
+74,Heliconia,Latispatha x Spissa,Bali,Heliconia,False,4,16,10,2,,,1,3,,2,3,3,2023-07-05 02:17:35.4208859,2023-07-05 02:17:35.4208861
+75,Cyrtostachys,Renda,Sealing Wax Palm,Palm,False,4,50,10,1,,,,,,2,4,3,2023-07-05 02:23:19.1853398,2023-07-05 02:23:19.1853399
+76,Heliconia,Bihai,Peachy Pink,Heliconia,False,4,14,8,1,,,2,9,4,3,4,3,2023-07-05 02:27:23.6197705,2023-07-05 02:27:23.6197709
+77,Heliconia,Bihai,Claw II,Heliconia,False,4,10,5,1,,,2,4,,3,4,3,2023-07-05 02:34:50.4149450,2023-07-05 02:35:55.1992034
+78,Cocos,Nucifera,Coconut Palm,Palm,False,4,60,20,0,,,,,,3,4,3,2023-07-05 02:40:57.0904199,2023-07-27 01:58:13.4016010
+79,Heliconia,Pendula,Frosty,Heliconia,False,4,14,8,1,,,1,7,,3,4,3,2023-07-05 02:54:37.7399198,2023-07-05 02:54:37.7399199
+80,Heliconia,Chartacea,Sexy Pink,Heliconia,False,4,14,10,1,,,9,4,,2,4,4,2023-07-05 03:01:19.9884175,2023-07-05 03:01:19.9884180
+81,Heliconia,Caribaea,Yellow,Heliconia,False,4,16,12,1,,,3,,,2,4,3,2023-07-05 03:32:53.1292224,2023-07-05 03:32:53.1292226
+82,Alocasia,Zebrina x micholitziana,Sarian,Shrub,False,4,10,5,1,,,,,,3,4,2,2023-07-05 03:41:33.5725167,2023-07-05 03:43:07.8364095
+86,Zingiber,Spectabile,Early Gold,Ginger,False,4,8,6,1,,,3,,,2,3,3,2023-07-05 03:49:52.7215981,2023-07-05 03:49:52.7215981
+87,Calathea,Crotilifera,Golden Fleece,Calathea,False,4,8,6,1,,,3,,,4,4,3,2023-07-05 05:25:20.8027180,2023-07-05 05:25:20.8027182
+88,Hedychium,Coccineum,Scarlet Ginger,Ginger,False,4,6,4,1,,,1,,,3,4,3,2023-07-05 05:34:25.5896490,2023-07-05 05:34:25.5896491
+89,Stromanthe,Leutea,Orange Beads,Calathea,False,4,10,8,1,,,2,,,4,4,3,2023-07-05 05:44:48.9609765,2023-12-27 05:43:38.3503143
+90,Heliconia,Stricta,Dark Desire,Heliconia,False,4,8,5,1,,,1,,,3,4,3,2023-07-05 17:14:45.2402381,2023-07-05 17:14:45.2402381
+91,Heliconia,Orthotricha,Pink Shag,Heliconia,False,4,12,6,1,,,9,1,4,3,4,3,2023-07-05 17:18:22.0556926,2023-07-05 17:18:22.0556927
+92,Heliconia,Stricta,Gustavo Red,Heliconia,False,4,14,6,1,,,1,3,,3,4,3,2023-07-05 17:22:32.6153803,2024-06-20 18:31:59.6374753
+93,Heliconia,Caribaea x Bihai,Mellow Yellow,Heliconia,False,4,16,10,1,,,3,,,3,4,3,2023-07-05 17:25:02.1624910,2023-07-05 17:25:02.1624910
+94,Heliconia,Collinsiana,Collinsiana,Heliconia,False,4,16,5,1,,,1,9,3,2,4,3,2023-07-05 17:32:33.1976055,2023-07-05 17:32:33.1976055
+95,Heliconia,Caribaea x Bihai,Midnight Flame,Heliconia,False,4,16,12,1,,,1,2,4,3,4,3,2023-07-05 17:36:35.8215497,2023-07-05 17:36:35.8215500
+96,Heliconia,Caribaea x Bihai,Grenada,Heliconia,False,4,16,10,1,,,2,3,,3,4,3,2023-07-05 17:40:39.4083855,2023-07-05 17:40:39.4083859
+97,Heliconia,Caribaea,Flash,Heliconia,False,4,16,10,1,,,3,9,,3,4,3,2023-07-05 17:44:29.0603302,2023-07-05 17:44:29.0603303
+98,Heliconia,Caribaea x Bihai,St. Rose,Heliconia,False,4,16,10,1,,,1,,,3,4,3,2023-07-05 17:47:14.5846819,2023-07-05 17:47:14.5846820
+99,Heliconia,Champneana,Splash,Heliconia,False,4,13,6,1,,,3,1,,2,4,3,2023-07-05 17:50:50.6719843,2023-07-05 17:50:50.6719844
+100,Heliconia,Caribaea x Bihai,Burgundy,Heliconia,False,4,18,10,1,,,1,,,3,4,3,2023-07-05 17:53:51.3395737,2023-07-05 17:53:51.3395738
+101,Heliconia,Caribaea x Bihai,Eden Yellow,Heliconia,False,4,12,8,1,,,3,,4,3,4,3,2023-07-05 19:35:44.9651535,2023-07-05 19:35:44.9651543
+102,Etlingera,hemispherica,Tulip Torch,Ginger,False,4,16,10,1,,,1,,,3,4,3,2023-07-05 19:43:45.2494116,2023-07-05 19:43:45.2494122
+103,Heliconia,Caribaea,Island Lime,Heliconia,False,4,14,8,1,,,4,3,1,3,4,3,2023-07-05 19:49:36.5831916,2023-07-05 19:49:36.5831917
+104,Heliconia,Caribaea x Bihai,Black Magic,Heliconia,False,4,16,12,1,,,1,,,3,4,3,2023-07-05 19:53:44.5709656,2023-07-05 19:53:44.5709659
+105,Tapenochilos,Annanasse,Wax Ginger,Ginger,False,4,10,6,1,,,1,,,2,3,3,2023-07-05 22:14:09.3012080,2023-07-05 22:14:09.3012082
+106,Heliconia,Bihai,Mt. Hope Yellow,Heliconia,False,4,16,8,1,,,2,3,,3,4,3,2023-07-05 22:17:08.3498013,2023-07-05 22:17:08.3498016
+107,Heliconia,Stricta,Iris Bannochie,Heliconia,False,4,12,6,1,,,1,,,3,4,3,2023-07-05 22:22:26.0086433,2023-07-05 22:24:07.1624785
+108,Etlingera,Eelatior,Evita's Rose,Ginger,False,4,16,10,1,,,9,1,,3,4,3,2023-07-05 22:28:53.9939491,2023-07-05 22:28:53.9939493
+109,Heliconia,Bihai,Halloween,Heliconia,False,4,14,8,1,,,2,3,4,3,4,3,2023-07-05 22:35:47.6801856,2023-07-05 22:35:47.6801858
+110,Heliconia,Penduloides,Perfect Darling,Heliconia,False,4,16,8,1,,,9,3,,3,4,3,2023-07-05 22:40:37.1675369,2023-07-05 22:40:37.1675371
+111,Zingiber,Zerumbet,Awapuhi,Ginger,False,4,5,3,1,,,1,,,3,4,3,2023-07-05 22:44:22.7368989,2023-07-05 22:44:22.7368995
+112,Thaumatophyllum,Xanadu,Xanadu,Foliage,False,4,5,2,4,,,,,,1,4,3,2023-07-05 22:58:08.2654415,2023-07-06 03:53:42.3626903
+113,Heliconia,Chartacea,Sexy Scarlet,Heliconia,False,4,14,5,1,,,1,4,,2,4,3,2023-07-05 23:04:18.4387911,2023-07-05 23:04:18.4387915
+114,Heliconia,Psittacorum,Flamingo,Heliconia,False,4,4,2,1,,,3,9,,2,4,3,2023-07-05 23:11:08.4459455,2023-07-05 23:11:08.4459457
+115,Heliconia,Chartacea x Platystachys,Temptress,Heliconia,False,4,16,10,1,,,1,3,,3,4,3,2023-07-05 23:15:24.7245211,2023-07-05 23:15:24.7245212
+116,Heliconia,Psittacorum,Kathy,Heliconia,False,4,6,4,2,,,1,2,,3,4,3,2023-07-05 23:18:45.7656976,2023-07-05 23:18:45.7656977
+117,Heliconia,Psittacorum,Cynthia,Heliconia,False,4,5,3,1,,,9,2,,2,4,3,2023-07-05 23:25:24.2381113,2023-07-05 23:25:24.2381114
+118,Heliconia,Stricta,Heart of Gold,Heliconia,False,4,10,6,1,,,2,3,4,3,4,3,2023-07-05 23:29:37.3907719,2023-07-05 23:29:37.3907721
+119,Heliconia,Caribaea,Barbados,Heliconia,False,4,16,8,1,,,1,,,3,4,3,2023-07-05 23:32:36.0712100,2023-07-05 23:32:36.0712102
+120,Heliconia,Orthotricha,Yellow Base,Heliconia,False,4,14,6,1,,,2,3,4,3,4,3,2023-07-05 23:35:03.5337644,2023-07-05 23:35:03.5337647
+121,Heliconia,Bihai,Claw I,Heliconia,False,4,16,5,2,,,1,2,4,3,4,3,2023-07-05 23:39:53.5316212,2023-07-05 23:39:53.5316213
+122,Heliconia,Wagneriana,Rainbow,Heliconia,False,4,7,4,1,,,3,2,4,3,4,3,2023-07-05 23:42:51.3997888,2023-07-05 23:42:51.3997890
+123,Heliconia,Psittacorum,Strawberries 'n Cream,Heliconia,False,4,5,3,1,,,3,9,,3,4,3,2023-07-05 23:46:34.7039738,2023-07-05 23:46:34.7039743
+124,Heliconia,Psittacorum,Sassy,Heliconia,False,4,6,3,2,,,9,2,4,2,4,3,2023-07-06 03:26:24.1387717,2023-07-06 03:26:24.1387719
+125,Colocasia,Esculenta,Tea Cups,Foliage,False,4,5,3,1,,,,,,2,4,2,2023-07-06 03:34:10.8979682,2023-07-06 03:54:16.8719845
+126,Spathoglottis,Plicata,Phillipine Ground Orchid,Orchid,False,4,4,2,1,,,6,,,3,4,2,2023-07-06 03:58:20.0594087,2023-07-06 03:58:20.0594089
+127,Heliconia,Stricta,Slash and Burn,Heliconia,False,4,10,6,1,,,3,1,4,3,4,3,2023-07-06 04:03:50.6539401,2023-07-06 04:05:15.1040408
+128,Heliconia,Orthotricha,Oriole Orange,Heliconia,False,4,8,4,1,,,2,4,,3,4,3,2023-07-06 04:08:50.6826277,2023-07-06 04:08:50.6826278
+129,Heliconia,Latispatha x Psittacorum,Carmasita,Heliconia,False,4,4,2,1,,,1,3,,3,4,3,2023-07-06 04:11:54.2757447,2023-07-06 04:11:54.2757449
+130,Heliconia,Stricta,Dwarf Jamaican ,Heliconia,False,4,2,1,1,,,,,,2,3,3,2023-07-06 04:16:10.3973201,2023-07-06 04:16:10.3973203
+131,Heliconia,Orthotricha,Imperial II,Heliconia,False,4,10,8,1,,,1,7,4,3,4,3,2023-07-06 04:24:20.5123268,2023-07-06 04:24:20.5123270
+132,Heliconia,Orthotricha,Kid Pink,Heliconia,False,4,8,5,1,,,9,1,4,3,4,3,2023-07-06 04:45:40.9185184,2023-07-23 18:08:41.3031777
+133,Heliconia,Latispatha x Caribaea,Siberian Lemon,Heliconia,False,4,14,8,1,,,3,,,3,4,3,2023-07-06 04:58:22.3861990,2023-07-06 04:58:22.3861991
+134,Alpinia,Purpurata,Rosy Dawn,Ginger,False,4,6,3,1,,,9,,,3,4,3,2023-07-06 05:02:38.8272951,2023-07-06 05:02:38.8272953
+135,Heliconia,Psittacorum,Cotton Candy,Heliconia,False,4,7,2,2,,,9,3,,2,4,3,2023-07-06 05:05:27.0974151,2023-07-06 05:05:27.0974155
+136,Heliconia,Psittacorum,Guyana,Heliconia,False,4,9,5,2,,,2,,,3,4,3,2023-07-06 05:11:15.5021330,2023-07-06 05:11:15.5021332
+137,Calathea,Crotilifera,Cream Green,Calathea,False,4,8,6,1,,,4,3,,4,4,3,2023-07-06 05:15:07.9613294,2023-07-06 05:15:07.9613296
+138,Calathea,Cylindrica,Green Ice,Calathea,False,4,4,3,1,,,4,,,3,4,3,2023-07-06 05:17:56.6033939,2023-07-06 05:17:56.6033941
+139,Alpinia,Purpurata,Anne Hironaka,Ginger,False,4,10,8,1,,,7,,,2,4,3,2023-07-06 05:21:14.6277982,2023-07-06 05:21:14.6277983
+140,Musa,Ornata,Siam Yellow,Banana,False,4,6,4,1,,,3,4,,3,4,3,2023-07-06 05:27:58.3415517,2023-07-06 05:27:58.3415523
+141,Cordyline,Fruticosa,Red Ti,Foliage,False,4,15,4,0,,,1,,,2,4,2,2023-07-06 21:57:28.1478853,2023-07-06 21:57:28.1478855
+142,Cordyline,Fruticosa,Variegated Ti,Foliage,False,4,15,4,0,,,4,1,,2,4,2,2023-07-06 22:01:42.2293676,2023-07-06 22:01:42.2293677
+143,Cordyline,Fruticosa,Green Ti,Foliage,False,4,15,4,0,,,4,,,2,4,2,2023-07-06 22:03:39.1075660,2023-07-06 22:03:39.1075661
+144,Pinanga,Coronata,Ivory Cane Palm,Palm,False,4,25,6,1,,,,,,1,2,2,2023-07-06 22:19:38.6531635,2023-07-06 22:19:38.6531637
+145,Cibotium,Glaucum,Hapu'u,Foliage,False,4,20,15,0,,,,,,2,4,3,2023-07-06 22:26:49.4495172,2023-07-06 22:26:49.4495176
+146,Neoregelia,Carolinae,Blushing Bromeliad,Bromeliad,False,4,1,1,1,,,,,,0,3,3,2023-07-06 22:30:48.6170217,2024-04-27 04:36:10.0759349
+147,Anthurium,Andraeanum,Red Anthurium,Foliage,False,4,5,3,4,,,1,,,0,2,3,2023-07-06 22:37:58.5262457,2023-07-06 22:37:58.5262458
+148,Heliconia,Orthotricha,Pink Cat,Heliconia,False,4,12,6,1,,,9,1,4,3,4,3,2023-07-14 16:10:31.2098692,2023-07-14 16:10:31.2098694
+149,Heliconia,Orthotricha,El Tigre,Heliconia,False,4,14,6,1,,,1,2,8,3,4,3,2023-07-14 16:12:03.2109981,2023-07-14 16:12:03.2109985
+150,Heliconia,Orthotricha,Colombian Orange,Heliconia,False,4,14,6,1,,,2,3,4,3,4,3,2023-07-14 16:14:00.1070306,2023-07-14 17:15:19.1252497
+151,Curcuma,Longa,Panama Purple,Ginger,False,4,6,3,1,,,6,4,,4,4,3,2023-07-21 17:20:30.5553271,2023-07-24 04:30:31.9613531
+152,Curcuma,Longa,Olena,Ginger,False,4,4,2,1,,,9,4,,2,4,3,2023-07-21 17:21:03.2929037,2023-07-24 04:29:22.8530616
+153,Curcuma,Cordata,Jewel of Thailand,Ginger,False,4,4,3,1,,,6,9,4,1,4,3,2023-07-21 17:24:48.9529528,2023-07-24 04:35:35.0504729
+154,Heniconia,Bihai x Caribaea,Richmond Red,Heliconia,False,4,14,12,0,,,1,,,3,4,3,2023-08-27 20:53:16.3733101,2023-08-27 21:08:34.1758433
+155,Alpinia,Purpurata,Kimi Ginger,Ginger,False,4,8,6,1,,,9,,,3,4,3,2023-08-27 20:55:25.7080030,2023-08-27 21:04:41.1215532
+156,Heliconia,Angusta,Red Christmas,Heliconia,False,4,4,2,1,,,1,7,,1,3,3,2023-08-27 21:02:39.2285536,2023-08-27 21:07:22.0360149
+157,Heliconia,Pendula,Bright Red,Heliconia,False,4,9,5,1,,,1,7,,,,3,2023-09-17 19:38:52.0813463,2023-10-22 19:56:23.9686954
+158,Globba,Williamsiana,Red Dragon,Ginger,False,4,2,1,1,,,1,,,2,2,3,2023-09-17 19:42:09.3551387,2023-10-22 20:15:06.6463377
+160,Curcuma,Hybrid,Sweet Memory,Ginger,False,4,2,1,1,,,6,,,2,3,3,2023-09-17 19:46:22.5446322,2023-10-22 20:10:47.6959646
+161,Curcuma,Unknown,Manee Siam,Curcuma,False,4,2,1,1,,,2,7,,1,2,3,2023-10-07 23:17:03.3166525,2023-10-22 20:04:41.4996492
+162,Guzmania,Lingulata,Burning Orange,Bromeliad,False,4,2,1,1,,,2,,,0,3,3,2023-10-07 23:22:53.8107835,2024-04-27 04:32:06.8776589
+163,Bromeliad,Vriesea,Unknown Pendant,Bromeliad,False,4,2,1,4,,,2,3,,1,3,3,2023-10-07 23:25:31.6085351,2024-04-27 04:36:42.3519514
+164,Zingiber,Spectabile,Honey Bee,Ginger,False,4,5,2,1,,,3,2,,1,3,3,2023-10-07 23:27:19.2382291,2023-10-07 23:27:19.2382292
+165,Zingiber,Neglectum,Jeweled Pagoda,Ginger,False,4,5,2,1,,,4,1,,1,3,3,2023-10-07 23:27:55.7043241,2023-10-22 20:02:45.0428690
+167,Heliconia,Accuminata,Super Cheri,Heliconia,False,4,6,4,1,,,2,3,,2,4,3,2023-10-07 23:35:10.3114874,2023-10-22 20:12:27.8145681
+168,Etlingera,Elatior,Sweet Pink,Ginger,False,4,16,10,1,,,9,,,3,4,3,2023-10-21 17:52:05.4977869,2023-10-21 17:52:05.4977872
+169,Heliconia,Mariae,Beefsteak,Heliconia,False,4,23,15,1,,,1,,,2,4,3,2023-10-21 17:57:18.8145992,2023-10-21 17:57:18.8145994
+170,Heliconia,Longissima,Red Wings,Heliconia,False,4,18,10,1,,,1,,,3,4,3,2023-10-21 18:06:53.0132988,2023-10-21 18:06:53.0132989
+171,Roystonea,Oleracea,Royal Palm,Palm,False,4,70,6,0,,,4,,,3,4,2,2023-10-21 18:15:48.7127048,2023-10-21 18:15:48.7127049
+172,Veitchia,Montgomeryana,Montgomery Palm,Palm,False,4,30,6,0,,,,,,3,,2,2023-10-21 18:21:18.4415948,2023-10-21 18:21:18.4415949
+173,Heliconia,Caribaea,Cherry Red,Heliconia,False,4,14,10,1,,,1,,,3,4,3,2023-10-21 18:30:46.4187088,2023-10-21 18:30:46.4187088
+174,Strongylodon ,macrobotrys,Blue Jade Vine,Vine,False,4,45,5,3,,,5,,,3,4,3,2023-10-21 18:43:54.5416262,2023-10-21 18:43:54.5416263
+175,Mucuna,Bennettii,Red Jade Vine,Vine,False,4,60,5,3,,,1,,,3,4,3,2023-10-21 18:48:09.6905620,2023-10-21 18:48:09.6905621
+176,Heliconia,Latispatha,Bleeding Heart,Heliconia,False,4,10,6,1,,,3,9,,3,4,3,2023-10-21 19:15:13.5046428,2023-10-21 19:15:13.5046430
+178,Heliconia,Orthotricha,She,Heliconia,False,4,6,5,,,,1,4,,3,4,3,2023-10-21 19:20:18.8046097,2023-10-22 19:38:34.2971880
+179,Musa,Velutina,Baby Pink,Banana,False,4,7,5,1,,,9,,,3,4,3,2023-10-21 19:23:46.9548171,2023-10-21 19:23:46.9548172
+180,Heliconia,Chartacea,Columbine,Heliconia,False,4,8,6,1,,,4,9,,3,4,3,2023-10-22 18:23:08.4556841,2023-10-22 18:23:08.4556843
+181,Dypsis,Lutescens,Golden Cane Palm,Palm,False,4,40,20,1,,,,,,2,3,3,2023-10-24 01:11:53.0273849,2023-12-18 00:44:55.8473682
+182,Ginger,Ginger,White Ginger,Ginger,False,4,6,4,1,,,7,,,2,3,3,2023-10-24 01:34:35.8463995,2023-12-18 01:32:39.0164646
+183,Geodorum,Densiflorum,Shepherd's Crook Orchid,Orchid,False,4,4,1,1,,,7,9,,1,3,3,2023-10-25 01:06:29.0854118,2023-12-18 00:31:27.5587645
+184,Calathea,Makoyana,Peacock,Calathea,False,4,2,1,1,,,,,,1,3,3,2023-10-25 01:08:48.8092044,2023-12-18 01:28:58.0649993
+185,Globba,Williamsiana,Giant Lavender,Ginger,False,4,2,1,1,,,6,,,2,2,3,2023-10-28 06:40:56.8217176,2023-10-28 06:40:56.8217182
+186,Etlingera,Mangayi,Sultan's Dome,Ginger,False,4,12,8,1,,,9,7,,2,3,3,2023-10-28 06:52:20.4170713,2023-10-28 06:52:20.4170716
+187,Heliconia,Caribaea x Bihai,Inner Light,Heliconia,False,4,14,8,1,,,3,4,,2,4,3,2023-12-18 00:09:06.7295898,2023-12-18 00:09:06.7296285
+188,Heliconia,Caribaea x Bihai,Yellow Dolly,Heliconia,False,4,14,9,1,,,2,3,,2,4,3,2023-12-18 00:15:22.5167561,2023-12-18 00:15:22.5167562
+189,Heliconia,Stricta,Sunrise,Heliconia,False,4,5,2,1,,,1,,,3,4,3,2023-12-18 00:22:45.1036110,2023-12-18 00:22:45.1036111
+190,Curcuma,Roscoeana,Pride of Burma,Curcuma,False,4,2,1,1,,,1,2,,3,1,3,2024-01-06 22:11:30.0349124,2024-01-06 22:11:30.0349548
+191,Curcuma,Aurantiaca x Petiolata,Ban Rai Red,Curcuma,False,4,3,1,1,,,1,,,2,4,3,2024-01-06 22:20:02.9636901,2024-01-06 22:20:02.9636902
+192,Alpinia,Purpurata,Madikeri White,Ginger,False,4,6,4,1,,,7,,,4,2,3,2024-01-06 22:26:31.7824650,2024-01-06 22:26:31.7824653
+193,Curcuma,Phrayawan,Prince of Herbs,Curcuma,False,4,3,1,1,,,7,9,3,2,4,3,2024-01-19 06:40:01.6990744,2024-01-19 06:40:01.6991127
+194,Musella,Lasiocarpa,Golden Lotus,Banana,False,4,5,3,1,,,3,,,2,4,3,2024-01-21 20:24:59.6515222,2024-01-21 20:24:59.6515650
+195,Alpinia,Purpurata,Darwin Lady,Ginger,False,4,12,8,1,,,9,,,2,4,3,2024-02-19 08:13:16.6849141,2024-02-19 08:13:16.6849512
+196,Heliconia,Bihai,Giant Lobster Claw,Heliconia,False,4,20,10,1,,,3,2,4,2,4,3,2024-02-19 19:59:43.6229538,2024-02-19 19:59:43.6229908
+197,Heliconia,Pogonantha,Pogonantha,Heliconia,False,4,12,8,1,,,1,3,,2,4,3,2024-04-20 22:37:53.9293055,2024-04-20 22:38:41.3028541
+198,Curcuma,Sawadee,Honeymoon,Curcuma,False,4,2,1,1,,,6,,,2,3,3,2024-04-20 22:52:18.8731021,2024-04-20 22:52:18.8731025
+199,Curcuma,Hybrid,Zebra Choco Top,Curcuma,False,4,2,1,1,,,4,,,2,3,3,2024-04-20 22:56:18.0966303,2024-04-20 22:56:18.0966305
+200,Curcuma,Hybrid,Twister,Curcuma,False,4,1,1,1,,,6,7,4,2,3,3,2024-04-20 22:59:45.2892727,2024-04-20 22:59:45.2892729
+201,Curcuma,Hybrid,DT602,Curcuma,False,4,2,1,1,,,9,4,4,2,3,3,2024-04-20 23:03:31.0529045,2024-04-20 23:03:31.0529048
+202,Musa,haekkinenii,Haekkinii,Banana,False,4,5,4,1,,,2,,,2,3,3,2024-04-20 23:23:17.3325538,2024-04-20 23:26:29.6605121
+203,Alocasia,macrorrhiza x odora,Dark Star,Foliage,False,4,7,4,0,,,,,,2,3,3,2024-04-21 03:40:27.9550504,2024-04-21 03:40:27.9550954
+204,Zingiber,Spectabile,Pink Maracas,Ginger,False,4,5,4,1,,,9,,,1,3,3,2024-04-26 21:02:27.8076436,2024-04-26 21:02:27.8076829
+205,Alpinia,Purpurata,Darwin Dolly,Ginger,False,4,12,8,1,,,9,,,2,4,3,2024-04-26 21:07:47.0509149,2024-04-26 21:11:16.6803029
+206,Alpinia,Purpurata,Darwin Desire,Ginger,False,4,12,8,1,,,9,,,2,4,3,2024-04-26 21:10:54.2312621,2024-04-26 21:10:54.2312622
+207,Aechmea,Blanchetiana,Orange,Bromeliad,False,4,5,2,1,,,2,,,2,4,2,2024-04-27 04:17:58.7781913,2024-04-27 04:17:58.7782309
+208,Alpinia,zerumbet,Shell ginger,Ginger,False,4,6,3,1,,,9,7,,2,4,3,2024-06-12 05:53:02.3748896,2024-06-12 05:53:40.5763759
+209,Alocasia,Tandurusa,Jacklyn,Foliage,False,4,8,4,1,,,4,,,2,3,3,2024-06-15 03:19:14.9555192,2024-06-15 03:19:14.9555575
+210,Calathea,Burle-marxii,Blue Ice,Foliage,False,4,5,3,1,,,7,,,2,3,3,2024-06-15 03:22:12.8858624,2024-06-15 03:22:12.8858625
+211,Zingiber,Spectabile,Singapore Gold,Ginger,False,4,8,6,1,,,3,2,,1,3,3,2024-06-15 03:25:40.4728740,2024-06-15 03:25:40.4728742
+212,Calathea,Lutea,Cigar,Calathea,False,4,16,10,1,,,8,,,1,3,3,2024-06-18 08:26:37.8639164,2024-06-18 08:30:45.5179108
+213,Heliconia,Griggsiana,Hunter's Moon,Heliconia,False,4,25,15,1,,,4,3,1,2,4,3,2024-06-20 18:19:41.8135321,2024-06-20 18:19:41.8135706
+215,Heliconia,imbricata x latispatha,Stairway To Heaven,Heliconia,False,4,14,6,1,,,2,1,,3,4,3,2024-08-12 20:35:42.0492832,2024-08-12 20:55:00.8498218
+216,Heliconia,Richardiana,Little Richard,Heliconia,False,4,6,3,1,,,1,3,4,2,4,3,2024-08-12 20:39:16.0973058,2024-08-12 20:39:16.0973061
+217,Heliconia,Bihai x Caribaea,Prince of Lightness,Heliconia,False,4,1,1,1,,,1,3,,3,4,3,2024-08-12 20:42:47.7148099,2024-08-12 20:43:25.0222443
+218,Calathea,Loeseneri,Star Calathea,Calathea,False,4,3,2,1,,,9,,,0,2,3,2024-08-12 20:45:57.0018852,2024-08-12 20:45:57.0018853
+219,Curcuma,Sawadee,Enchantress,Curcuma,False,4,4,2,1,,,1,7,,2,3,3,2024-09-08 18:57:33.4875747,2024-09-08 18:57:33.4876136
+220,Curcuma,Sawadee,Maroon Heart,Curcuma,False,4,2,1,1,,,1,,,2,3,3,2024-09-08 18:59:00.4472646,2024-09-08 18:59:00.4472649
+221,Curcuma,ferruginea,Bronze Plume,Curcuma,False,4,5,4,1,,,6,7,4,2,3,3,2024-09-08 19:01:18.8462034,2024-09-08 19:01:18.8462037
+222,Zingiber,pyroglossum,Ivory Ice,Ginger,False,4,3,2,1,,,3,,,2,3,3,2024-09-08 19:03:08.3405634,2024-09-08 19:18:31.4861857
+223,Brugmansia,Hybrid,Shameless,Shrub,False,4,7,5,0,,,9,,,3,4,3,2024-09-08 19:08:43.7270932,2024-09-08 19:08:43.7270934
+224,Brugmansia,Hybrid,Dolas Goldtrompete,Shrub,False,4,10,6,0,,,3,,,3,4,3,2024-09-08 19:13:46.7374464,2024-09-08 19:13:46.7374466
+225,Globba,Hybrid,Blue Hawaii,Ginger,False,4,3,1,1,,,6,,,2,2,3,2024-09-08 19:16:17.9785076,2024-09-08 19:16:17.9785078
+226,Curcuma,australasica,Aussie Plume,Curcuma,False,4,5,3,1,,,6,7,,1,3,3,2024-09-08 19:21:42.7565860,2024-09-08 19:21:42.7565862
+227,Zingiber,wrayi,Licorice,Ginger,False,4,4,2,1,,,1,,,2,2,3,2024-09-08 19:26:48.5953435,2024-09-08 19:26:48.5953439
+228,Curcuma,amada,Mango Ginger,Curcuma,False,4,4,3,1,,,9,7,,2,4,3,2024-09-10 22:59:58.5496416,2024-09-10 22:59:58.5496835
+229,Heliconia,veliregera,Red Howler,Heliconia,False,4,14,10,1,,,1,,,2,4,3,2024-09-23 06:26:14.1191415,2024-09-23 06:26:14.1191829
+230,Zingiber,Spectabile,Hilo Giant,Ginger,False,4,8,6,1,,,1,,,2,3,3,2024-09-23 06:45:04.8539330,2024-09-23 06:45:04.8539331
