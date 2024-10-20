@@ -1,0 +1,146 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model BaseColor {
+  id                                                           Int               @id @default(autoincrement())
+  name                                                         String            @unique
+  value                                                        String
+  plantdefinition_plantdefinition_colormajorTobasecolors       PlantDefinition[] @relation("plantdefinition_colormajorTobasecolors")
+  plantdefinition_plantdefinition_colorminorTobasecolors       PlantDefinition[] @relation("plantdefinition_colorminorTobasecolors")
+  plantdefinition_plantdefinition_colorpredominantTobasecolors PlantDefinition[] @relation("plantdefinition_colorpredominantTobasecolors")
+
+  @@map("basecolors")
+}
+
+model EntityType {
+  id       Int        @id @default(autoincrement())
+  typename String     @unique
+  entities Entity[]
+
+  @@map("entitytypes")
+}
+
+model Image {
+  id            Int             @id @default(autoincrement())
+  url           String
+  source        String?
+  photographer  String?
+  notes         String?
+  plantdefimage plantdefimage[] @ignore
+
+  @@map("image")
+}
+
+model Note {
+  entityid  String   @db.Uuid
+  datetime  DateTime @id @db.Timestamptz(6)
+  text      String
+  imagelink String?
+  entity  Entity @relation(fields: [entityid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@map("note")
+}
+
+model Entity {
+  id              String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  entitytype      Int
+  name            String?
+  plantdef        Int
+  x               Float           @db.Real
+  y               Float           @db.Real
+  width           Float           @db.Real
+  height          Float           @db.Real
+  angle           Float           @db.Real
+  filloverride    String?
+  strokeoverride  String?
+  dateplanted     DateTime?       @db.Timestamptz(6)
+  acquiredfrom    String?
+  timealtered     DateTime        @db.Timestamptz(6)
+  timeadded       DateTime        @db.Timestamptz(6)
+  entitytypes     EntityType      @relation(fields: [entitytype], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  plantdefinition PlantDefinition @relation(fields: [plantdef], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  note            Note[]
+
+  @@map("entities")
+}
+
+model PlantCategory {
+  name            String            @id
+  shape           Int
+  fillcolor       String
+  strokecolor     String
+  iconurl         String
+  plantdefinition PlantDefinition[]
+
+  @@map("plantcategories")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model plantdefimage {
+  plantdefid      Int
+  imageid         Int
+  isdefault       Boolean
+  image           Image           @relation(fields: [imageid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  plantdefinition PlantDefinition @relation(fields: [plantdefid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@ignore
+}
+
+model PlantDefinition {
+  id                                                      Int             @id @default(autoincrement())
+  genus                                                   String?
+  species                                                 String?
+  variety                                                 String?
+  plantcategory                                           String
+  isedible                                                Boolean
+  form                                                    Int
+  maxheight                                               Int?
+  minheight                                               Int?
+  habit                                                   Int?
+  minzone                                                 Int?
+  maxzone                                                 Int?
+  colorpredominant                                        Int?
+  colormajor                                              Int?
+  colorminor                                              Int?
+  lightpreferencemin                                      Int?
+  lightpreferencemax                                      Int?
+  waterpreference                                         Int?
+  notes                                                   String?
+  timeadded                                               DateTime        @db.Timestamptz(6)
+  timealtered                                             DateTime        @db.Timestamptz(6)
+  entities                                                Entity[]
+  plantdefimage                                           plantdefimage[] @ignore
+  basecolors_plantdefinition_colormajorTobasecolors       BaseColor?      @relation("plantdefinition_colormajorTobasecolors", fields: [colormajor], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  basecolors_plantdefinition_colorminorTobasecolors       BaseColor?      @relation("plantdefinition_colorminorTobasecolors", fields: [colorminor], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  basecolors_plantdefinition_colorpredominantTobasecolors BaseColor?      @relation("plantdefinition_colorpredominantTobasecolors", fields: [colorpredominant], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  plantform                                               PlantForm       @relation(fields: [form], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  plantcategories                                         PlantCategory @relation(fields: [plantcategory], references: [name], onDelete: NoAction, onUpdate: NoAction)
+
+  @@map("plantdefinition")
+}
+
+model PlantForm {
+  id              Int               @id @default(autoincrement())
+  name            String
+  plantdefinition PlantDefinition[]
+
+  @@map("plantform")
+}
+
+model Setting {
+  username      String @id
+  scale         Float  @db.Real
+  offsetx       Int
+  offsety       Int
+  surveyslicesx Int
+  surveyslicesy Int
+
+  @@map("settings")
+}
