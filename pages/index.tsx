@@ -16,6 +16,8 @@ type ImageDef = {
 const xStep = 4749;
 const yStep = 5247;
 
+console.log("env: " + process.env.AZURE_STORAGE_CONNECTION_STRING);
+
 export const getStaticProps = (async () => {
   const blobServiceClient = BlobServiceClient.fromConnectionString(
     process.env.AZURE_STORAGE_CONNECTION_STRING ?? ""
