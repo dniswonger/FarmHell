@@ -4,14 +4,15 @@ import Drawer from "../drawer/Drawer";
 
 export default function Layout({ children }: PropsWithChildren) {
 
-
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
     return (
-        <div className="relative h-full">
+        <div className="h-full flex flex-col">
             <Header onMenuClick={() => { setIsDrawerOpen(!isDrawerOpen) }}>Go To Heliconia</Header>
-            <Drawer isOpen={isDrawerOpen} position="left" />
-            {children}
+            <div className="flex-grow relative">
+                <Drawer isOpen={isDrawerOpen} position="left" />
+                {children}
+            </div>
         </div>
     )
 }

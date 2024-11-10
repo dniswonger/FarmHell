@@ -1,6 +1,5 @@
 "use client";
 
-import "@/globals.css";
 import { BlobServiceClient } from "@azure/storage-blob";
 import { GetStaticProps, InferGetStaticPropsType } from "next/types";
 import { Application, Sprite, Texture } from "pixi.js";
@@ -15,8 +14,6 @@ type ImageDef = {
 };
 const xStep = 4749;
 const yStep = 5247;
-
-console.log("env: " + process.env.AZURE_STORAGE_CONNECTION_STRING);
 
 export const getStaticProps = (async () => {
   const blobServiceClient = BlobServiceClient.fromConnectionString(
