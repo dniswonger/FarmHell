@@ -1,3 +1,5 @@
+// These styles apply to every route in the application
+import "@/app/globals.css";
 import Layout from "../components/layout/Layout";
 import { AppProps } from "next/app";
 
