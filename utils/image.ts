@@ -1,13 +1,21 @@
 import { Assets } from "pixi.js";
 
+const textureCache = new Set<string>();
+
 export async function loadAssets(assets: string[]) {
 
-    for (const asset of assets) {
-
-        await Assets.load({
+    return Promise.all(assets.map((asset) => {
+        console.log('loading asset: ' + asset)
+        return Assets.load({
             src: asset,
             format: 'png',
             loadParser: 'loadTextures',
         })
-    }
+    }))
+}
+
+export async function preloadAssets(assets: string[]) {
+    const newAssets = assets.filter(asset => !textureCache.has(asset));
+    await loadAssets(newAssets);
+    newAssets.forEach(asset => textureCache.add(asset));
 }
