@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, createContext } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Application, Container } from "pixi.js";
 import { Viewport } from "pixi-viewport";
 import { StageContext } from "./useStage";

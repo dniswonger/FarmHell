@@ -5,7 +5,6 @@ const textureCache = new Set<string>();
 export async function loadAssets(assets: string[]) {
 
     return Promise.all(assets.map((asset) => {
-        console.log('loading asset: ' + asset)
         return Assets.load({
             src: asset,
             format: 'png',

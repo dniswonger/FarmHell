@@ -63,7 +63,7 @@ export default function Home() {
 
   return (
     <Stage>
-      {data.map((a) => <Sprite texture={a} />)}
+      {data.map((a) => <Sprite key={a} texture={a} />)}
     </Stage>
   )
 }

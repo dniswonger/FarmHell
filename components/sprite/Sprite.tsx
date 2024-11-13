@@ -51,7 +51,7 @@ export function Sprite({
         }
 
         load()
-    }, [texture]); // Recreate sprite if texture changes
+    }, [texture, addChild]); // Recreate sprite if texture changes
 
     // Update properties when they change
     useEffect(() => {
