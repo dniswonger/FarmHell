@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 import Stage from "@/components/stage/Stage";
 import { Sprite } from "@/components/sprite/Sprite";
-
+import { useSession, signIn } from "next-auth/react";
 export default function Home() {
 
   const [data, setData] = useState<string[]>([])
   const [isLoading, setLoading] = useState(true)
+
+  const { data: session } = useSession()
 
   useEffect(() => {
 
@@ -57,6 +59,8 @@ export default function Home() {
 
     load()
   }, [])
+
+  if (!session) return <div><button onClick={() => signIn()}>Sign in</button>not logged in</div>
 
   if (isLoading) return <div className="h-full w-full flex justify-center items-center"><p className="text-2xl text-green-500 ">LOADING</p></div>
   if (data.length == 0) return <div className="h-full w-full flex justify-center items-center"><p className="text-2xl text-green-500 ">NO IMAGE DATA</p></div>
