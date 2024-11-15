@@ -10,7 +10,6 @@ type StageProps = {
 export default function Stage({ children }: StageProps) {
 
     const stageRef = useRef<HTMLDivElement>(null);
-    const [app, setApp] = useState<Application | null>(null)
     const [viewport, setViewport] = useState<Viewport | null>(null)
     const [isLoading, setIsLoading] = useState(true)
 
@@ -42,7 +41,6 @@ useEffect(() => {
         stageRef.current.appendChild(app.canvas);
 
         setViewport(viewport)
-        setApp(app)
         setIsLoading(false)
     }
 

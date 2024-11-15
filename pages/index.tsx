@@ -58,7 +58,7 @@ export const getServerSideProps = (async ({ req, res }) => {
   return { props: { session, user } }
 }) satisfies GetServerSideProps<{ session: Session | null, user: UserWithTileset | null }>
 
-export default function Home({ session, user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home({  user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
   const [data, setData] = useState<Tile[]>([])
   const [isLoading, setLoading] = useState(true)
@@ -135,7 +135,7 @@ export default function Home({ session, user }: InferGetServerSidePropsType<type
     }
 
     load()
-  }, [])
+  }, [user])
 
   if (isLoading) return <div className="h-full w-full flex justify-center items-center"><p className="text-2xl text-green-500 ">LOADING</p></div>
   if (data.length == 0) return <div className="h-full w-full flex justify-center items-center"><p className="text-2xl text-green-500 ">NO IMAGE DATA</p></div>
