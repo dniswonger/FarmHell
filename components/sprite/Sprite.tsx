@@ -17,8 +17,8 @@ export function Sprite({
     texture,
     x = 0,
     y = 0,
-    width = 500,
-    height = 500,
+    width,
+    height,
     rotation = 0,
     anchor = { x: 0, y: 0 },
 }: SpriteProps) {
@@ -34,17 +34,14 @@ export function Sprite({
 
             // Create sprite
             const sprite = PixiSprite.from(texture);
-            spriteRef.current = sprite;
-
-            // Set initial properties
-            Object.assign(sprite, {
-                x,
-                y,
-                width: width || sprite.width,
-                height: height || sprite.height,
-                rotation
-            });
+            sprite.x = x
+            sprite.y = y
+            sprite.width = width || sprite.width
+            sprite.height = height || sprite.height
+            sprite.rotation = rotation
             sprite.anchor.set(anchor.x, anchor.y);
+
+            spriteRef.current = sprite;
 
             // add sprite to stage
             addChild(sprite)

@@ -10,6 +10,7 @@ type StageProps = {
 export default function Stage({ children }: StageProps) {
 
     const stageRef = useRef<HTMLDivElement>(null);
+    const [app, setApp] = useState<Application | null>(null)
     const [viewport, setViewport] = useState<Viewport | null>(null)
     const [isLoading, setIsLoading] = useState(true)
 
@@ -18,47 +19,46 @@ export default function Stage({ children }: StageProps) {
         viewport.addChild(child)
     }
 
-    useEffect(() => {
-        // init pixi app
-        async function init(app: Application) {
+useEffect(() => {
+    // init pixi app
+    async function init(app: Application) {
 
-            setIsLoading(true)
+        setIsLoading(true)
 
-            if (stageRef.current == null) throw new Error('Stage cannot find a suitable ref')
+        if (stageRef.current == null) throw new Error('Stage cannot find a suitable ref')
 
-            await app.init({ width: stageRef.current.clientWidth, height: stageRef.current.clientHeight, backgroundColor: 0x3e3e3e });
+        await app.init({ width: stageRef.current.clientWidth, height: stageRef.current.clientHeight, backgroundColor: 0x3e3e3e, resizeTo: window });
 
-            // viewport allows for zooming, panning, and scrolling
-            // app.renderer.events is important for wheel to work properly when renderer.view is placed or scaled
-            const viewport = new Viewport({
-                screenWidth: app.screen.width,
-                screenHeight: app.screen.height,
-                events: app.renderer.events,
-            });
+        // viewport allows for zooming, panning, and scrolling
+        // app.renderer.events is important for wheel to work properly when renderer.view is placed or scaled
+        const viewport = new Viewport({
+            events: app.renderer.events,
+        });
 
-            viewport.drag().pinch().wheel().decelerate();
+        viewport.drag().pinch().wheel().decelerate()
 
-            app.stage.addChild(viewport)
+        app.stage.addChild(viewport)
 
-            stageRef.current.appendChild(app.canvas);
+        stageRef.current.appendChild(app.canvas);
 
-            setViewport(viewport)
-            setIsLoading(false)
-        }
+        setViewport(viewport)
+        setApp(app)
+        setIsLoading(false)
+    }
 
-        const app = new Application();
-        init(app)
+    const app = new Application();
+    init(app)
 
-        return () => {
-            app.destroy(true)
-        }
-    }, [])
+    return () => {
+        app.destroy(true)
+    }
+}, [])
 
-    return (
-        <StageContext.Provider value={{ addChild: handleAddChild }}>
-            <div ref={stageRef} className="w-full h-full">
-                {!isLoading && children}
-            </div>
-        </StageContext.Provider>
-    )
+return (
+    <StageContext.Provider value={{ addChild: handleAddChild }}>
+        <div ref={stageRef} className="w-full h-full">
+            {!isLoading && children}
+        </div>
+    </StageContext.Provider>
+)
 }

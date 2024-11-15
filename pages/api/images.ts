@@ -2,12 +2,12 @@ import { BlobSASPermissions, generateBlobSASQueryParameters, StorageSharedKeyCre
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 
-export type ImageDef = {
-    name: string;
-    image64: string;
-    x: number;
-    y: number;
-};
+// export type ImageDef = {
+//     name: string;
+//     image64: string;
+//     x: number;
+//     y: number;
+// };
 
 type ResponseData = {
     sasUrl?: string

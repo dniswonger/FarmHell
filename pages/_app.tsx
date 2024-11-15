@@ -4,12 +4,16 @@ import Layout from "../components/layout/Layout";
 import { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 
+
 export default function App({ Component, pageProps }: AppProps) {
+
+ // console.log(pageProps.session)
+
   return (
     <SessionProvider session={pageProps.session}>
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </SessionProvider>
   );
 }

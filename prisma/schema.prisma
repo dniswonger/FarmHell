@@ -144,3 +144,24 @@ model Setting {
 
   @@map("settings")
 }
+
+model User {
+  id       String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  oauthid  String? @unique
+  name     String?
+  email    String? 
+  tileset  TileSet? 
+
+  @@map("users")
+}
+
+model TileSet {
+  id       String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name     String
+  tiles    String[]
+  width    Int
+  height   Int
+  user     User?    @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@map("tilesets")
+}
