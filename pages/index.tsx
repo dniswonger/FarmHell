@@ -3,65 +3,75 @@ import Stage from "@/components/stage/Stage";
 import { Sprite } from "@/components/sprite/Sprite";
 //import { getServerSession } from "next-auth"
 //import { authOptions } from "./api/auth/[...nextauth]"
-//import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 //import { Session } from "next-auth";
-import {  Prisma } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
+import { getAuth, clerkClient } from "@clerk/nextjs/server";
 
 type UserWithTileset = Prisma.UserGetPayload<{
   include: { tileset: true }
 }>
 
 
-// export const getServerSideProps = (async ({ req, res }) => {
+export const getServerSideProps = (async ({ req, res }) => {
 
-//   const session = await getServerSession(
-//     req,
-//     res,
-//     authOptions
-//   )
+  // const session = await getServerSession(
+  //   req,
+  //   res,
+  //   authOptions
+  // )
 
-  
 
-//   const prisma = new PrismaClient()
-//   let user: UserWithTileset | null = null
+  const { userId } = getAuth(req)
 
-//   if (session) {
-//     user = await prisma.user.findUnique({
-//       where: {
-//         oauthid: session.token.sub
-//       },
-//       include: {
-//         tileset: true  // This includes the related tileset in the response
-//       }
-//     })
+  const prisma = new PrismaClient()
+  let user: UserWithTileset | null = null
 
-//     if (!user) {
+  if (userId) {
+    user = await prisma.user.findUnique({
+      where: {
+        oauthid: userId
+      },
+      include: {
+        tileset: true  // This includes the related tileset in the response
+      }
+    })
 
-//       user = await prisma.user.create({
-//         data: {
-//           name: session.user?.name,
-//           email: session.user?.email,
-//           oauthid: session.token.sub,
-//           tileset: {
-//             create: {
-//               name: "Default",
-//               tiles: ['Slices_01.jpg', 'Slices_02.jpg', 'Slices_03.jpg', 'Slices_04.jpg', 'Slices_05.jpg', 'Slices_06.jpg', 'Slices_09.jpg'],
-//               width: 3,
-//               height: 3
-//             }
-//           }
-//         },
-//         include: {
-//           tileset: true
-//         }
-//       })
-//     }
-//   }
-//   return { props: { session, user } }
-// }) satisfies GetServerSideProps<{ session: Session | null, user: UserWithTileset | null }>
+    console.log(user)
 
-//export default function Home({  user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  export default function Home({  }) {
+    // if the user doesn't exist in our database, create them
+    if (!user) {
+
+      const client = await clerkClient()
+      const userDetails = userId ? await client.users.getUser(userId) : undefined
+
+      console.log(userDetails)
+
+      user = await prisma.user.create({
+        data: {
+          name: userDetails?.firstName + " " + userDetails?.lastName,
+          email: userDetails?.emailAddresses[0].emailAddress,
+          oauthid: userDetails?.id,
+          tileset: {
+            create: {
+              name: "Default",
+              tiles: ['Slices_01.jpg', 'Slices_02.jpg', 'Slices_03.jpg', 'Slices_04.jpg', 'Slices_05.jpg', 'Slices_06.jpg', 'Slices_09.jpg'],
+              width: 3,
+              height: 3
+            }
+          }
+        },
+        include: {
+          tileset: true
+        }
+      })
+    }
+  }
+  return { props: { user } }
+}) satisfies GetServerSideProps<{ user: UserWithTileset | null }>
+
+export default function Home({ user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
 
   const [data, setData] = useState<Tile[]>([])
   const [isLoading, setLoading] = useState(true)
@@ -76,7 +86,7 @@ type UserWithTileset = Prisma.UserGetPayload<{
   const xStep = 4749;
   const yStep = 5247;
 
-  const user : UserWithTileset | null = null
+  //const user: UserWithTileset | null = null
 
   useEffect(() => {
 
@@ -120,7 +130,7 @@ type UserWithTileset = Prisma.UserGetPayload<{
 
           const currentX = (parseInt(rawNum) - 1) % gridDimensionX;
           const currentY = Math.floor((parseInt(rawNum) - 1) / gridDimensionY);
-          
+
           tileArray.push({
             url: url,
             x: currentX * xStep,
@@ -147,7 +157,7 @@ type UserWithTileset = Prisma.UserGetPayload<{
 
   return (
     <Stage>
-      {data.map((tile) => <Sprite key={tile.url} texture={tile.url} x={tile.x} y={tile.y}  />)}
+      {data.map((tile) => <Sprite key={tile.url} texture={tile.url} x={tile.x} y={tile.y} />)}
     </Stage>
   )
 }
