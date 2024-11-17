@@ -1,64 +1,67 @@
 import { useEffect, useState } from "react";
 import Stage from "@/components/stage/Stage";
 import { Sprite } from "@/components/sprite/Sprite";
-import { getServerSession } from "next-auth"
-import { authOptions } from "./api/auth/[...nextauth]"
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { Session } from "next-auth";
-import { PrismaClient, Prisma } from "@prisma/client";
+//import { getServerSession } from "next-auth"
+//import { authOptions } from "./api/auth/[...nextauth]"
+//import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+//import { Session } from "next-auth";
+import {  Prisma } from "@prisma/client";
 
 type UserWithTileset = Prisma.UserGetPayload<{
   include: { tileset: true }
 }>
 
 
-export const getServerSideProps = (async ({ req, res }) => {
+// export const getServerSideProps = (async ({ req, res }) => {
 
-  const session = await getServerSession(
-    req,
-    res,
-    authOptions
-  )
+//   const session = await getServerSession(
+//     req,
+//     res,
+//     authOptions
+//   )
 
-  const prisma = new PrismaClient()
-  let user: UserWithTileset | null = null
+  
 
-  if (session) {
-    user = await prisma.user.findUnique({
-      where: {
-        oauthid: session.token.sub
-      },
-      include: {
-        tileset: true  // This includes the related tileset in the response
-      }
-    })
+//   const prisma = new PrismaClient()
+//   let user: UserWithTileset | null = null
 
-    if (!user) {
+//   if (session) {
+//     user = await prisma.user.findUnique({
+//       where: {
+//         oauthid: session.token.sub
+//       },
+//       include: {
+//         tileset: true  // This includes the related tileset in the response
+//       }
+//     })
 
-      user = await prisma.user.create({
-        data: {
-          name: session.user?.name,
-          email: session.user?.email,
-          oauthid: session.token.sub,
-          tileset: {
-            create: {
-              name: "Default",
-              tiles: ['Slices_01.jpg', 'Slices_02.jpg', 'Slices_03.jpg', 'Slices_04.jpg', 'Slices_05.jpg', 'Slices_06.jpg', 'Slices_09.jpg'],
-              width: 3,
-              height: 3
-            }
-          }
-        },
-        include: {
-          tileset: true
-        }
-      })
-    }
-  }
-  return { props: { session, user } }
-}) satisfies GetServerSideProps<{ session: Session | null, user: UserWithTileset | null }>
+//     if (!user) {
 
-export default function Home({  user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+//       user = await prisma.user.create({
+//         data: {
+//           name: session.user?.name,
+//           email: session.user?.email,
+//           oauthid: session.token.sub,
+//           tileset: {
+//             create: {
+//               name: "Default",
+//               tiles: ['Slices_01.jpg', 'Slices_02.jpg', 'Slices_03.jpg', 'Slices_04.jpg', 'Slices_05.jpg', 'Slices_06.jpg', 'Slices_09.jpg'],
+//               width: 3,
+//               height: 3
+//             }
+//           }
+//         },
+//         include: {
+//           tileset: true
+//         }
+//       })
+//     }
+//   }
+//   return { props: { session, user } }
+// }) satisfies GetServerSideProps<{ session: Session | null, user: UserWithTileset | null }>
+
+//export default function Home({  user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  export default function Home({  }) {
 
   const [data, setData] = useState<Tile[]>([])
   const [isLoading, setLoading] = useState(true)
@@ -72,6 +75,8 @@ export default function Home({  user }: InferGetServerSidePropsType<typeof getSe
   }
   const xStep = 4749;
   const yStep = 5247;
+
+  const user : UserWithTileset | null = null
 
   useEffect(() => {
 

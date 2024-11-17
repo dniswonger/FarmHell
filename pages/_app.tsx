@@ -2,18 +2,30 @@
 import "@/app/globals.css";
 import Layout from "../components/layout/Layout";
 import { AppProps } from "next/app";
-import { SessionProvider } from "next-auth/react";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 
 
 export default function App({ Component, pageProps }: AppProps) {
 
- // console.log(pageProps.session)
+  // console.log(pageProps.session)
 
   return (
-    <SessionProvider session={pageProps.session}>
+    <ClerkProvider>
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </SessionProvider>
+    </ClerkProvider>
   );
 }
