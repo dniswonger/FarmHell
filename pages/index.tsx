@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import Stage from "@/components/stage/Stage";
 import { Sprite } from "@/components/sprite/Sprite";
-//import { getServerSession } from "next-auth"
-//import { authOptions } from "./api/auth/[...nextauth]"
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-//import { Session } from "next-auth";
 import { PrismaClient, Prisma } from "@prisma/client";
 import { getAuth, clerkClient } from "@clerk/nextjs/server";
 
@@ -12,15 +9,7 @@ type UserWithTileset = Prisma.UserGetPayload<{
   include: { tileset: true }
 }>
 
-
-export const getServerSideProps = (async ({ req, res }) => {
-
-  // const session = await getServerSession(
-  //   req,
-  //   res,
-  //   authOptions
-  // )
-
+export const getServerSideProps = (async ({ req }) => {
 
   const { userId } = getAuth(req)
 
@@ -44,8 +33,6 @@ export const getServerSideProps = (async ({ req, res }) => {
 
       const client = await clerkClient()
       const userDetails = userId ? await client.users.getUser(userId) : undefined
-
-      console.log(userDetails)
 
       user = await prisma.user.create({
         data: {
@@ -85,8 +72,6 @@ export default function Home({ user }: InferGetServerSidePropsType<typeof getSer
   }
   const xStep = 4749;
   const yStep = 5247;
-
-  //const user: UserWithTileset | null = null
 
   useEffect(() => {
 
