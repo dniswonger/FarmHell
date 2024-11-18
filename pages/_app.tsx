@@ -2,30 +2,23 @@
 import "@/app/globals.css";
 import Layout from "../components/layout/Layout";
 import { AppProps } from "next/app";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import TextureProvider from '@/hooks/TextureProvider/TextureProvider'
 
+const queryClient = new QueryClient()
+const textureMap = new Map<string, string>()
 
 export default function App({ Component, pageProps }: AppProps) {
-
-  // console.log(pageProps.session)
-
   return (
     <ClerkProvider>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <QueryClientProvider client={queryClient}>
+        <TextureProvider map={textureMap}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </TextureProvider>
+      </QueryClientProvider>
     </ClerkProvider>
   );
 }

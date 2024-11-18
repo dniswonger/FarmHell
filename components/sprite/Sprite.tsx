@@ -1,6 +1,6 @@
 import { Sprite as PixiSprite } from 'pixi.js';
 import { useEffect, useRef } from 'react';
-import { loadAssets } from '@/utils/image';
+//import { loadAssets } from '@/utils/image';
 import { useStage } from '@/components/stage/useStage';
 
 interface SpriteProps {
@@ -26,25 +26,35 @@ export function Sprite({
 
     const { addChild } = useStage()
 
+    // const url = new URL(texture)
+    // console.log('texture url')
+    // console.log(url)
+    
+
+    //const [getTexture, loadTexture] = useTextureCache()
+
     useEffect(() => {
         async function load() {
 
             // load the texture
-            await loadAssets([texture])
+            //await loadAssets([texture])
+            //const t = await useTextureCache(texture)
 
             // Create sprite
-            const sprite = PixiSprite.from(texture);
-            sprite.x = x
-            sprite.y = y
-            sprite.width = width || sprite.width
-            sprite.height = height || sprite.height
-            sprite.rotation = rotation
-            sprite.anchor.set(anchor.x, anchor.y);
+            if (texture) {
+                const sprite = PixiSprite.from(texture);
+                sprite.x = x
+                sprite.y = y
+                sprite.width = width || sprite.width
+                sprite.height = height || sprite.height
+                sprite.rotation = rotation
+                sprite.anchor.set(anchor.x, anchor.y);
 
-            spriteRef.current = sprite;
+                spriteRef.current = sprite;
 
-            // add sprite to stage
-            addChild(sprite)
+                // add sprite to stage
+                addChild(sprite)
+            }
         }
 
         load()

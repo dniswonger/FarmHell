@@ -4,6 +4,8 @@ import { Sprite } from "@/components/sprite/Sprite";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { PrismaClient, Prisma } from "@prisma/client";
 import { getAuth, clerkClient } from "@clerk/nextjs/server";
+import { useTextureCache } from "@/hooks/TextureProvider/TextureProvider";
+
 
 type UserWithTileset = Prisma.UserGetPayload<{
   include: { tileset: true }
@@ -25,8 +27,6 @@ export const getServerSideProps = (async ({ req }) => {
         tileset: true  // This includes the related tileset in the response
       }
     })
-
-    console.log(user)
 
     // if the user doesn't exist in our database, create them
     if (!user) {
@@ -62,6 +62,7 @@ export default function Home({ user }: InferGetServerSidePropsType<typeof getSer
 
   const [data, setData] = useState<Tile[]>([])
   const [isLoading, setLoading] = useState(true)
+  const [getTexture, loadTexture] = useTextureCache()
 
   type Tile = {
     url: string,
@@ -87,26 +88,45 @@ export default function Home({ user }: InferGetServerSidePropsType<typeof getSer
 
         for (const blobName of user?.tileset?.tiles ?? []) {
 
-          // get the SAS for each blob -- this is a url with a specific key for anonymous access. It will expire an an hour.
-          // TODO: we should cache this SAS url so we don't have to hit the server every time.
-          // TODO: use react-query
-          const response = await fetch(`/api/images?blobName=${encodeURIComponent(blobName)}`);
-          if (!response.ok) {
-            throw new Error('Failed to get SAS URL');
+          // do we already have this texture?
+          let blobUrl = getTexture(blobName)
+
+          if (blobUrl != null) {
+            console.log('texture already loaded: ' + blobUrl)
+            console.log(blobName)
           }
 
-          const { sasUrl } = await response.json();
+          if (blobUrl == null) {
 
-          // once we have the SAS we can get the actual blob from azure
-          const imageResponse = await fetch(sasUrl);
-          if (!imageResponse.ok) {
-            throw new Error('Failed to download image');
+            console.log('blob not looaded yet, retrieving sas url')
+
+
+            // get the SAS for each blob -- this is a url with a specific key for anonymous access. It will expire an an hour.
+            // TODO: we should cache this SAS url so we don't have to hit the server every time.
+            // TODO: use react-query
+            const response = await fetch(`/api/images?blobName=${encodeURIComponent(blobName)}`);
+            if (!response.ok) {
+              throw new Error('Failed to get SAS URL');
+            }
+
+            const { sasUrl } = await response.json();
+
+            console.log('sas url: ' + sasUrl)
+
+            // once we have the SAS we can get the actual blob from azure
+            const imageResponse = await fetch(sasUrl);
+            if (!imageResponse.ok) {
+              throw new Error('Failed to download image');
+            }
+
+            const blob = await imageResponse.blob();
+
+            // creates a url to access the blob (i.e. blob:http://localhost:3000/a7484d01-2015-4b40-92a3-abc5e53cea71)
+            blobUrl = URL.createObjectURL(blob);
           }
 
-          const blob = await imageResponse.blob();
-
-          // creates a url to access the blob (i.e. blob:http://localhost:3000/a7484d01-2015-4b40-92a3-abc5e53cea71)
-          const url = URL.createObjectURL(blob);
+          // cache and load the texture
+          await loadTexture(blobName, blobUrl)
 
           const rawNum = blobName.substring(
             blobName.lastIndexOf("_") + 1,
@@ -117,7 +137,7 @@ export default function Home({ user }: InferGetServerSidePropsType<typeof getSer
           const currentY = Math.floor((parseInt(rawNum) - 1) / gridDimensionY);
 
           tileArray.push({
-            url: url,
+            url: blobUrl,
             x: currentX * xStep,
             y: currentY * yStep,
             width: xStep,
@@ -135,12 +155,13 @@ export default function Home({ user }: InferGetServerSidePropsType<typeof getSer
     }
 
     load()
-  }, [user])
+  }, [user, getTexture, loadTexture])
 
   if (isLoading) return <div className="h-full w-full flex justify-center items-center"><p className="text-2xl text-green-500 ">LOADING</p></div>
   if (data.length == 0) return <div className="h-full w-full flex justify-center items-center"><p className="text-2xl text-green-500 ">NO IMAGE DATA</p></div>
 
   return (
+
     <Stage>
       {data.map((tile) => <Sprite key={tile.url} texture={tile.url} x={tile.x} y={tile.y} />)}
     </Stage>
