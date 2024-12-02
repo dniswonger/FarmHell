@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["tracing"]
 }
 
 datasource db {
@@ -43,7 +44,7 @@ model Note {
   datetime  DateTime @id @db.Timestamptz(6)
   text      String
   imagelink String?
-  entity  Entity @relation(fields: [entityid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  entity  Entity @relation(fields: [entityid], references: [id])
 
   @@map("note")
 }
@@ -67,6 +68,8 @@ model Entity {
   entitytypes     EntityType      @relation(fields: [entitytype], references: [id], onDelete: NoAction, onUpdate: NoAction)
   plantdefinition PlantDefinition @relation(fields: [plantdef], references: [id], onDelete: NoAction, onUpdate: NoAction)
   note            Note[]
+  tileset         TileSet?        @relation(fields: [tilesetid], references: [id])
+  tilesetid       String?         @db.Uuid
 
   @@map("entities")
 }
@@ -161,7 +164,9 @@ model TileSet {
   tiles    String[]
   width    Int
   height   Int
-  user     User?    @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-
+  user     User?    @relation(fields: [userid], references: [id])
+  userid   String?  @unique @db.Uuid
+  entities Entity[]
+  
   @@map("tilesets")
 }

@@ -10,9 +10,6 @@ type TextureContextType = {
 export const TextureContext = createContext<TextureContextType | null>(null)
 
 export function TextureProvider({ children, map }: { children: React.ReactNode, map: Map<string, string> }) {
-
-    console.log('creating new TextureProvider map')
-    //const textureMap = new Map<string, string>()
     const textureMap = map
 
     return (
@@ -31,8 +28,6 @@ export function useTextureCache() : [
     }
 
     const map = context.textureMap
-
-   
 
     const getTexture = useCallback(function getTexture(name: string) {
         return map.get(name)

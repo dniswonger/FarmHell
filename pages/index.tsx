@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import Stage from "@/components/stage/Stage";
 import { Sprite } from "@/components/sprite/Sprite";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { PrismaClient, Prisma } from "@prisma/client";
 import { getAuth, clerkClient } from "@clerk/nextjs/server";
 import { useTextureCache } from "@/hooks/TextureProvider/TextureProvider";
-
+import { PrismaClient, Prisma, Entity as PrismaEntity } from "@prisma/client";
+import { withOptimize } from "@prisma/extension-optimize";
+import Entity from "@/components/entity/Entity";
+import Sidebar from "@/components/sidebar/Sidebar";
+import { SidebarProvider } from "@/components/sidebar/useSidebar";
 
 type UserWithTileset = Prisma.UserGetPayload<{
   include: { tileset: true }
@@ -14,8 +17,9 @@ type UserWithTileset = Prisma.UserGetPayload<{
 export const getServerSideProps = (async ({ req }) => {
 
   const { userId } = getAuth(req)
+  let entities: PrismaEntity[] = []
 
-  const prisma = new PrismaClient()
+  const prisma = new PrismaClient().$extends(withOptimize({ apiKey: process.env.OPTIMIZE_API_KEY ?? '' }))
   let user: UserWithTileset | null = null
 
   if (userId) {
@@ -27,6 +31,23 @@ export const getServerSideProps = (async ({ req }) => {
         tileset: true  // This includes the related tileset in the response
       }
     })
+
+    // entities = await prisma.entity.findMany({
+    //   where: {
+    //     tilesetid: user?.tileset?.id
+    //   }
+    // })
+
+    const temp = await prisma.entity.findFirst({
+      where: {
+        tilesetid: user?.tileset?.id,
+        dateplanted: {
+          not: null
+        }
+      }
+    })
+
+    if (temp) entities = [temp]
 
     // if the user doesn't exist in our database, create them
     if (!user) {
@@ -44,7 +65,7 @@ export const getServerSideProps = (async ({ req }) => {
               name: "Default",
               tiles: ['Slices_01.jpg', 'Slices_02.jpg', 'Slices_03.jpg', 'Slices_04.jpg', 'Slices_05.jpg', 'Slices_06.jpg', 'Slices_09.jpg'],
               width: 3,
-              height: 3
+              height: 3,
             }
           }
         },
@@ -54,10 +75,10 @@ export const getServerSideProps = (async ({ req }) => {
       })
     }
   }
-  return { props: { user } }
-}) satisfies GetServerSideProps<{ user: UserWithTileset | null }>
+  return { props: { user, entities } }
+}) satisfies GetServerSideProps<{ user: UserWithTileset | null, entities: PrismaEntity[] }>
 
-export default function Home({ user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home({ user, entities }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
 
   const [data, setData] = useState<Tile[]>([])
@@ -91,16 +112,7 @@ export default function Home({ user }: InferGetServerSidePropsType<typeof getSer
           // do we already have this texture?
           let blobUrl = getTexture(blobName)
 
-          if (blobUrl != null) {
-            console.log('texture already loaded: ' + blobUrl)
-            console.log(blobName)
-          }
-
           if (blobUrl == null) {
-
-            console.log('blob not looaded yet, retrieving sas url')
-
-
             // get the SAS for each blob -- this is a url with a specific key for anonymous access. It will expire an an hour.
             // TODO: we should cache this SAS url so we don't have to hit the server every time.
             // TODO: use react-query
@@ -110,8 +122,6 @@ export default function Home({ user }: InferGetServerSidePropsType<typeof getSer
             }
 
             const { sasUrl } = await response.json();
-
-            console.log('sas url: ' + sasUrl)
 
             // once we have the SAS we can get the actual blob from azure
             const imageResponse = await fetch(sasUrl);
@@ -160,10 +170,17 @@ export default function Home({ user }: InferGetServerSidePropsType<typeof getSer
   if (isLoading) return <div className="h-full w-full flex justify-center items-center"><p className="text-2xl text-green-500 ">LOADING</p></div>
   if (data.length == 0) return <div className="h-full w-full flex justify-center items-center"><p className="text-2xl text-green-500 ">NO IMAGE DATA</p></div>
 
-  return (
 
-    <Stage>
-      {data.map((tile) => <Sprite key={tile.url} texture={tile.url} x={tile.x} y={tile.y} />)}
-    </Stage>
+  // console.log('rendering stage')
+  // console.log('entities', entities)
+
+  return (
+    <SidebarProvider>
+      <Sidebar />
+      <Stage>
+        {entities.map((entity) => <Entity key={entity.id} entity={entity} />)}
+        {data.map((tile) => <Sprite key={tile.url} texture={tile.url} x={tile.x} y={tile.y} />)}
+      </Stage>
+    </SidebarProvider>
   )
 }

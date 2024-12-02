@@ -18,45 +18,66 @@ export default function Stage({ children }: StageProps) {
         viewport.addChild(child)
     }
 
-useEffect(() => {
-    // init pixi app
-    async function init(app: Application) {
+    // function handleAddGraphic(child: Graphics) {
+    //     if (viewport == null) throw new Error('Stage must be initialized before adding children')
 
-        setIsLoading(true)
+    //     console.log('adding graphics')
+        
+    //     const coords = viewport.toScreen(child.x, child.y)
+    //     child.x = coords.x
+    //     child.y = coords.y
 
-        if (stageRef.current == null) throw new Error('Stage cannot find a suitable ref')
+    //     console.log(child.x, child.y)
 
-        await app.init({ width: stageRef.current.clientWidth, height: stageRef.current.clientHeight, backgroundColor: 0x3e3e3e, resizeTo: window });
 
-        // viewport allows for zooming, panning, and scrolling
-        // app.renderer.events is important for wheel to work properly when renderer.view is placed or scaled
-        const viewport = new Viewport({
-            events: app.renderer.events,
-        });
+    //     viewport.addChild(child)
+    // }
 
-        viewport.drag().pinch().wheel().decelerate()
+    useEffect(() => {
 
-        app.stage.addChild(viewport)
+        // init pixi app
+        async function init(app: Application) {
 
-        stageRef.current.appendChild(app.canvas);
+            setIsLoading(true)
 
-        setViewport(viewport)
-        setIsLoading(false)
-    }
+            if (stageRef.current == null) throw new Error('Stage cannot find a suitable ref')
 
-    const app = new Application();
-    init(app)
+            // resize the viewport when the browser window is resized
+            window.addEventListener('resize', () => app.renderer.resize(stageRef.current?.clientWidth ?? 0, stageRef.current?.clientHeight ?? 0))
 
-    return () => {
-        app.destroy(true)
-    }
-}, [])
+            await app.init({ width: stageRef.current.clientWidth, height: stageRef.current.clientHeight, backgroundColor: 0x3e3e3e });
 
-return (
-    <StageContext.Provider value={{ addChild: handleAddChild }}>
-        <div ref={stageRef} className="w-full h-full">
-            {!isLoading && children}
-        </div>
-    </StageContext.Provider>
-)
+            // viewport allows for zooming, panning, and scrolling
+            // app.renderer.events is important for wheel to work properly when renderer.view is placed or scaled
+            const viewport = new Viewport({
+                events: app.renderer.events,
+            });
+
+            viewport.drag().pinch().wheel().decelerate()
+
+            app.stage.addChild(viewport)
+
+            stageRef.current.appendChild(app.canvas);
+
+            setViewport(viewport)
+            setIsLoading(false)
+        }
+
+        const app = new Application();
+        init(app)
+
+        return () => {
+            app.destroy(true)
+        }
+    }, [])
+
+    console.log(children)
+
+    return (
+        <StageContext.Provider value={{ addChild: handleAddChild, viewport: viewport }}>
+            <div ref={stageRef} className="w-full h-full" >
+                {!isLoading && children}
+            </div>
+        </StageContext.Provider>
+    )
 }
